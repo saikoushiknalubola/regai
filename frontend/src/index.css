@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-base text-ink-800 font-sans;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+    line-height: 1.25;
+  }
+
+  code, pre, kbd {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded font-sans font-medium text-sm
+           transition-all duration-150 cursor-pointer select-none;
+  }
+  .btn-primary {
+    @apply btn bg-ink-800 text-surface-base hover:bg-ink-700 active:bg-ink-900;
+  }
+  .btn-secondary {
+    @apply btn bg-surface-overlay text-ink-700 border border-surface-border
+           hover:bg-surface-raised hover:border-ink-300 active:bg-surface-overlay;
+  }
+  .btn-danger {
+    @apply btn bg-signal-red text-white hover:opacity-90 active:opacity-100;
+  }
+  .btn-ghost {
+    @apply btn text-ink-600 hover:bg-surface-raised hover:text-ink-800;
+  }
+
+  .card {
+    @apply bg-white rounded-lg border border-surface-border shadow-card;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-xs font-medium font-mono;
+  }
+  .badge-critical { @apply badge bg-red-100 text-signal-red; }
+  .badge-major    { @apply badge bg-amber-100 text-signal-amber; }
+  .badge-minor    { @apply badge bg-blue-100 text-signal-blue; }
+  .badge-ok       { @apply badge bg-green-100 text-signal-green; }
+  .badge-neutral  { @apply badge bg-surface-overlay text-ink-500; }
+
+  .severity-death         { @apply badge bg-red-100 text-signal-red; }
+  .severity-disability    { @apply badge bg-orange-100 text-orange-700; }
+  .severity-hospitalisation { @apply badge bg-amber-100 text-signal-amber; }
+  .severity-others        { @apply badge bg-surface-overlay text-ink-500; }
+
+  .input {
+    @apply w-full px-3 py-2 rounded border border-surface-border bg-white
+           text-ink-800 text-sm placeholder:text-ink-300
+           focus:outline-none focus:ring-2 focus:ring-signal-blue/30 focus:border-signal-blue
+           transition-all duration-150;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-ink-500 uppercase tracking-widest mb-1.5;
+  }
+
+  .section-title {
+    @apply text-xs font-medium text-ink-400 uppercase tracking-widest;
+  }
+
+  .stat-number {
+    @apply font-display text-3xl font-bold text-ink-800 tabular-nums;
+  }
+
+  .divider { @apply border-t border-surface-border; }
+
+  .progress-bar {
+    @apply h-1.5 rounded-full bg-surface-overlay overflow-hidden;
+  }
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-500;
+  }
+
+  .drop-zone {
+    @apply border-2 border-dashed border-surface-border rounded-lg p-8
+           flex flex-col items-center justify-center gap-3 text-center
+           cursor-pointer transition-all duration-200
+           hover:border-signal-blue hover:bg-blue-50/40;
+  }
+  .drop-zone-active {
+    @apply border-signal-blue bg-blue-50/60;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded text-sm text-ink-600
+           cursor-pointer transition-all duration-150
+           hover:bg-surface-raised hover:text-ink-800;
+  }
+  .sidebar-item-active {
+    @apply bg-surface-raised text-ink-800 font-medium;
+  }
+
+  .table-base {
+    @apply w-full text-sm;
+  }
+  .table-base th {
+    @apply text-left text-xs font-medium text-ink-400 uppercase tracking-wider
+           px-4 py-3 border-b border-surface-border bg-surface-raised;
+  }
+  .table-base td {
+    @apply px-4 py-3 border-b border-surface-border text-ink-700;
+  }
+  .table-base tr:last-child td { @apply border-b-0; }
+  .table-base tr:hover td { @apply bg-surface-base; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.surface.border') transparent;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.25s ease-out both;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

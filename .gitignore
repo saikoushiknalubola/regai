@@ -1,0 +1,9 @@
+venv/
+node_modules/
+__pycache__/
+*.pyc
+.env
+frontend/dist/
+scripts/benchmark_results.json
+*.bin
+*.pt

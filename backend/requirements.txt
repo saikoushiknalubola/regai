@@ -1,0 +1,58 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+python-dotenv==1.0.1
+pydantic==2.7.1
+pydantic-settings==2.2.1
+
+# Database
+supabase==2.4.3
+asyncpg==0.29.0
+sqlalchemy==2.0.30
+
+# NLP core
+spacy==3.7.4
+presidio-analyzer==2.2.354
+presidio-anonymizer==2.2.354
+
+# Transformers / ML
+transformers==4.40.2
+torch==2.3.0
+sentence-transformers==2.7.0
+scikit-learn==1.4.2
+numpy==1.26.4
+pandas==2.2.2
+
+# Document processing
+pypdf2==3.0.1
+pdfplumber==0.11.0
+python-docx==1.1.2
+openpyxl==3.1.2
+pillow==10.3.0
+pytesseract==0.3.10
+
+# Audio transcription
+openai-whisper==20231117
+
+# Google Gemini
+google-generativeai==0.5.4
+
+# Text similarity / diff
+rapidfuzz==3.9.0
+diff-match-patch==20230430
+
+# Evaluation metrics
+rouge-score==0.1.2
+bert-score==0.3.13
+evaluate==0.4.2
+
+# Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+cryptography==42.0.7
+
+# Utilities
+httpx==0.27.0
+aiofiles==23.2.1
+python-magic==0.4.27
+chardet==5.2.0
